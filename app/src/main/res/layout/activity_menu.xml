@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".MenuActivity">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSaludarApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saludar App"
+        android:background="@color/teal_200"
+        android:layout_marginBottom="20dp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnIMCApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IMC App"
+        android:background="@color/background_button"
+        android:layout_marginBottom="20dp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:layout_marginBottom="20dp"
+        />
+
+</LinearLayout>
