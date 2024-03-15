@@ -10,14 +10,14 @@ import com.google.android.material.slider.RangeSlider
 import java.text.DecimalFormat
 
 class ImcCalculatorActivity : AppCompatActivity() {
-    private lateinit var viewMale:CardView
-    private lateinit var viewFemale:CardView
+    private lateinit var viewMale: CardView
+    private lateinit var viewFemale: CardView
 
     private var isMaleSelected: Boolean = true
-    private var isFemaleSelected:Boolean= false
+    private var isFemaleSelected: Boolean = false
 
-    private lateinit var tvHeight:TextView
-    private lateinit var rsHeight:RangeSlider
+    private lateinit var tvHeight: TextView
+    private lateinit var rsHeight: RangeSlider
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +28,15 @@ class ImcCalculatorActivity : AppCompatActivity() {
         initUI()
 
     }
+
     private fun initComponents() {
-        viewMale =findViewById(R.id.viewMale)
-        viewFemale= findViewById(R.id.viewFemale)
-        tvHeight= findViewById(R.id.tvHeight)
-        rsHeight= findViewById<RangeSlider>(R.id.rsHeight)
+        viewMale = findViewById(R.id.viewMale)
+        viewFemale = findViewById(R.id.viewFemale)
+        tvHeight = findViewById(R.id.tvHeight)
+        rsHeight = findViewById<RangeSlider>(R.id.rsHeight)
 
     }
+
     private fun initListeners() {
         viewMale.setOnClickListener {
             changeGender()
@@ -42,29 +44,33 @@ class ImcCalculatorActivity : AppCompatActivity() {
         }
         viewFemale.setOnClickListener {
             changeGender()
-            setGenderColor() }
+            setGenderColor()
+        }
         rsHeight.addOnChangeListener { _, value, _ ->
-            val df = DecimalFormat("#.##") // con esto me cargo el cero que no lo estamos usando ejem:(120.0)
+            val df =
+                DecimalFormat("#.##") // con esto me cargo el cero que no lo estamos usando ejem:(120.0)
             val result = df.format(value)
-            tvHeight.text= "$result cm"
+            tvHeight.text = "$result cm"
         }
     }
-    private fun changeGender(){
-        isMaleSelected= !isMaleSelected
-        isFemaleSelected= !isFemaleSelected
+
+    private fun changeGender() {
+        isMaleSelected = !isMaleSelected
+        isFemaleSelected = !isFemaleSelected
     }
 
-    private fun setGenderColor(){
+    private fun setGenderColor() {
         viewMale.setCardBackgroundColor(getBackgroundColor(isMaleSelected))
         viewFemale.setCardBackgroundColor(getBackgroundColor(isFemaleSelected))
     }
-    private fun getBackgroundColor(isSelectedComponent:Boolean):Int{
-        val colorReference=if(isSelectedComponent){
+
+    private fun getBackgroundColor(isSelectedComponent: Boolean): Int {
+        val colorReference = if (isSelectedComponent) {
             R.color.background_component_selected
-        }else{
+        } else {
             R.color.background_component
         }
-        return ContextCompat.getColor(this,colorReference)
+        return ContextCompat.getColor(this, colorReference)
     }
 
     private fun initUI() {
