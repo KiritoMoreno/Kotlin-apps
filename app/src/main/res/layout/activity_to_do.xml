@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/rvCategories"
         >
-        
+
     </androidx.recyclerview.widget.RecyclerView>
 
 
