@@ -16,6 +16,7 @@ class ToDoActivity : AppCompatActivity() {
     }
 
     private fun initComponents(){
+        rvCategories= findViewById(R.id.rvCategories)
 
     }
     private fun initUI(){
