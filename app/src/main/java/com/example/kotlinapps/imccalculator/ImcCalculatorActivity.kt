@@ -2,6 +2,8 @@ package com.example.kotlinapps.imccalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -18,6 +20,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var isFemaleSelected: Boolean = false
     private var currentWeight:Int=70
     private var currentAge:Int = 70
+    private var currentHeight: Int = 120
 
     private lateinit var tvHeight: TextView
     private lateinit var rsHeight: RangeSlider
@@ -29,6 +32,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var btnSubtractAge: FloatingActionButton
     private lateinit var btnPlusAge:FloatingActionButton
     private lateinit var tvAge:TextView
+
+    private lateinit var btnCalculate:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +55,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnSubtractAge = findViewById(R.id.btnSubtractAge)
         btnPlusAge = findViewById(R.id.btnPlusAge)
         tvAge = findViewById(R.id.tvAge)
-
+        btnCalculate = findViewById(R.id.btnCalculate)
     }
 
     private fun initListeners() {
@@ -65,8 +70,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
         rsHeight.addOnChangeListener { _, value, _ ->
             val df =
                 DecimalFormat("#.##") // con esto me cargo el cero que no lo estamos usando ejem:(120.0)
-            val result = df.format(value)
-            tvHeight.text = "$result cm"
+            currentHeight = df.format(value).toInt()
+            tvHeight.text = "$currentHeight cm"
         }
         btnSubtractWeight.setOnClickListener {
             currentWeight -= 1
@@ -84,6 +89,16 @@ class ImcCalculatorActivity : AppCompatActivity() {
             currentAge += 1
             setAge()
         }
+        btnCalculate.setOnClickListener {
+            calculateIMC()
+        }
+    }
+    private fun calculateIMC(){
+        val df = DecimalFormat("#.##")
+        val imc = currentWeight / (currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
+        val result= df.format(imc).toDouble() // numero mas cerrado
+        Log.i("Moreno", "El imc es: $imc ")
+
     }
     private fun setAge(){
         tvAge.text = currentAge.toString()
