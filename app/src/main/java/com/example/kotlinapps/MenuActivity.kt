@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import com.example.kotlinapps.firstapp.FirstAppActivity
 import com.example.kotlinapps.imccalculator.ImcCalculatorActivity
+import com.example.kotlinapps.todoapp.ToDoActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,9 +15,16 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaludarApp = findViewById<AppCompatButton>(R.id.btnSaludarApp)
         val btnIMCApp = findViewById<AppCompatButton>(R.id.btnIMCApp)
+        val btnToDoApp = findViewById<AppCompatButton>(R.id.btnToDoApp)
         btnSaludarApp.setOnClickListener { navigateToSaludarApp() }
         btnIMCApp.setOnClickListener { navigateToImcApp() }
+        btnToDoApp.setOnClickListener { navigateToToDoApp() }
 
+    }
+
+    private fun navigateToToDoApp() {
+        val intent = Intent(this,ToDoActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToImcApp() {
