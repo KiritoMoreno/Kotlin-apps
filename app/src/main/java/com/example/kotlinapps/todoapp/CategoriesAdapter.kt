@@ -10,12 +10,12 @@ class CategoriesAdapter(private var categories: List <TaskCategory>):RecyclerVie
         val view= LayoutInflater.from(parent.context).inflate(R.layout.item_task_category, parent, false)
         return CategoriesViewHolder(view)
     }
-
+    override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
+        holder.render(categories[position])
+    }
     override fun getItemCount(): Int = categories.size
 
 
-    override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
+
 
 }
