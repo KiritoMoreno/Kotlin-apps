@@ -36,6 +36,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private lateinit var btnCalculate:Button
 
+    companion object{
+        const val IMC_KEY = "IMC_RESULT"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc_calculator)
@@ -97,7 +101,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
     private fun navigateToResult(result:Double){
         val intent = Intent (this,ResultIMCActivity::class.java)
-        intent.putExtra("IMC_RESULT",result)
+        intent.putExtra(IMC_KEY,result)
         startActivity(intent)
     }
     private fun calculateIMC():Double{
