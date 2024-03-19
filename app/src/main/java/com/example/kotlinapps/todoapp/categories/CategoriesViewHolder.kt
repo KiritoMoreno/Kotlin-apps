@@ -1,10 +1,11 @@
-package com.example.kotlinapps.todoapp
+package com.example.kotlinapps.todoapp.categories
 
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinapps.R
+import com.example.kotlinapps.todoapp.TaskCategory
 
 class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
 

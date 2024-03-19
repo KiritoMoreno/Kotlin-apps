@@ -1,9 +1,10 @@
-package com.example.kotlinapps.todoapp
+package com.example.kotlinapps.todoapp.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinapps.R
+import com.example.kotlinapps.todoapp.TaskCategory
 
 class CategoriesAdapter(private var categories: List <TaskCategory>):RecyclerView.Adapter<CategoriesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinapps.R
+import com.example.kotlinapps.todoapp.categories.CategoriesAdapter
 
 class ToDoActivity : AppCompatActivity() {
     private val categories = listOf(
@@ -14,6 +15,7 @@ class ToDoActivity : AppCompatActivity() {
     )
     private lateinit var rvCategories: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
+    private lateinit var rvTasks: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class ToDoActivity : AppCompatActivity() {
 
     private fun initComponents(){
         rvCategories= findViewById(R.id.rvCategories)
+        rvTasks = findViewById(R.id.rvTasks)
 
     }
     private fun initUI(){
