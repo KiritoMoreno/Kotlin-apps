@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:padding="16dp"
     android:background="@color/todo_background_todo_app">
     <EditText
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
             android:id="@+id/rbBusiness"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Business"
+            android:text="@string/todo_Business"
             android:checked="true"
             android:textColor="@color/white"
             android:buttonTint="@color/todo_business_category"
@@ -33,7 +34,7 @@
             android:id="@+id/rbPersonal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Personal"
+            android:text="@string/todo_Personal"
             android:textColor="@color/white"
             android:buttonTint="@color/todo_personal_category"
             />
@@ -41,16 +42,17 @@
             android:id="@+id/rbOthers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others"
+            android:text="@string/todo_Others"
             android:textColor="@color/white"
             android:buttonTint="@color/todo_other_category"
             />
 
     </RadioGroup>
     <Button
+        android:id="@+id/btnAddTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/HomeWork"
+        android:text="@string/todo_HomeWork"
         app:backgroundTint="@color/todo_accent"
         android:textColor="@color/white"
         />

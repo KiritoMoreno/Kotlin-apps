@@ -29,9 +29,9 @@
     <string name="todo_categories">Categorias:</string>
     <string name="todo_tasks">Tareas:</string>
     <string name="todo_dialog_add_task">Añade la tarea:</string>
-    <string name="Business">Negocios</string>
-    <string name="Personal">Personal</string>
-    <string name="Others">Otros</string>
-    <string name="HomeWork">TAREA</string>
+    <string name="todo_Business">Negocios</string>
+    <string name="todo_Personal">Personal</string>
+    <string name="todo_Others">Otros</string>
+    <string name="todo_HomeWork">TAREA</string>
 
 </resources>
