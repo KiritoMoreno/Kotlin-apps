@@ -5,17 +5,25 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinapps.R
+import com.example.kotlinapps.todoapp.TaskCategory.*
 import com.example.kotlinapps.todoapp.categories.CategoriesAdapter
+import com.example.kotlinapps.todoapp.tasks.TasksAdapter
 
 class ToDoActivity : AppCompatActivity() {
     private val categories = listOf(
-        TaskCategory.Business,
-        TaskCategory.Personal,
-        TaskCategory.Other
+        Business,
+        Personal,
+        Other
+    )
+    private val tasks = mutableListOf(
+        Task("PruebaBusiness", Business),
+        Task("PruebaOther", Other),
+        Task("PruebaPersonal", Personal)
     )
     private lateinit var rvCategories: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
     private lateinit var rvTasks: RecyclerView
+    private lateinit var tasksAdapter: TasksAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,5 +41,10 @@ class ToDoActivity : AppCompatActivity() {
         categoriesAdapter = CategoriesAdapter(categories)
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
         rvCategories.adapter = categoriesAdapter
+
+        tasksAdapter = TasksAdapter(tasks)
+        rvTasks.layoutManager = LinearLayoutManager(this)
+        rvTasks.adapter = tasksAdapter
+
     }
 }
