@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/todo_background_todo_app">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTask"
+        android:backgroundTint="@color/white"
+        android:hint="@string/todo_dialog_add_task"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
+
+    <RadioGroup
+        android:id="@+id/rgCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RadioButton
+            android:id="@+id/rbBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Business"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:buttonTint="@color/todo_business_category"
+            />
+        <RadioButton
+            android:id="@+id/rbPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Personal"
+            android:textColor="@color/white"
+            android:buttonTint="@color/todo_personal_category"
+            />
+        <RadioButton
+            android:id="@+id/rbOthers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Others"
+            android:textColor="@color/white"
+            android:buttonTint="@color/todo_other_category"
+            />
+
+    </RadioGroup>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/HomeWork"
+        app:backgroundTint="@color/todo_accent"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

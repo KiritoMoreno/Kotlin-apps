@@ -1,5 +1,6 @@
 package com.example.kotlinapps.todoapp
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import com.example.kotlinapps.R
 import com.example.kotlinapps.todoapp.TaskCategory.*
 import com.example.kotlinapps.todoapp.categories.CategoriesAdapter
 import com.example.kotlinapps.todoapp.tasks.TasksAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ToDoActivity : AppCompatActivity() {
     private val categories = listOf(
@@ -25,16 +27,20 @@ class ToDoActivity : AppCompatActivity() {
     private lateinit var rvTasks: RecyclerView
     private lateinit var tasksAdapter: TasksAdapter
 
+    private lateinit var fabAddTask: FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_to_do)
         initComponents()
         initUI()
+        initListeners()
     }
 
     private fun initComponents(){
         rvCategories= findViewById(R.id.rvCategories)
         rvTasks = findViewById(R.id.rvTasks)
+        fabAddTask = findViewById(R.id.fabAddTask)
 
     }
     private fun initUI(){
@@ -46,5 +52,13 @@ class ToDoActivity : AppCompatActivity() {
         rvTasks.layoutManager = LinearLayoutManager(this)
         rvTasks.adapter = tasksAdapter
 
+    }
+    private fun initListeners(){
+        fabAddTask.setOnClickListener {showDialog()
+
+        }
+    }
+    private fun showDialog(){
+        val dialog = Dialog(this)
     }
 }
