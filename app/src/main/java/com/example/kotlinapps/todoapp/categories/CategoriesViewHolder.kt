@@ -11,7 +11,9 @@ class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val tvCategoryName: TextView = view.findViewById(R.id.tvCategoryName)
     private val divider: View= view.findViewById(R.id.divider)
-    fun render(taskCategory: TaskCategory){
+    fun render(taskCategory: TaskCategory, onItemSelected:(Int) -> Unit){
+
+        itemView.setOnClickListener{onItemSelected(layoutPosition)}
 
         when(taskCategory){
             TaskCategory.Business -> {
@@ -27,6 +29,12 @@ class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
                 divider.setBackgroundColor(ContextCompat.getColor(divider.context,R.color.todo_personal_category))
             }
         }
+    }
+
+    private fun onItemSelected(layoutPosition: Int): View.OnClickListener? {
+
+        
+
     }
 
 }
