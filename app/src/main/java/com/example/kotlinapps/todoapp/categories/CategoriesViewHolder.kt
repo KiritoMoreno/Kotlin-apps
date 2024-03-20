@@ -33,7 +33,7 @@ class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private fun onItemSelected(layoutPosition: Int): View.OnClickListener? {
 
-        
+
 
     }
 
