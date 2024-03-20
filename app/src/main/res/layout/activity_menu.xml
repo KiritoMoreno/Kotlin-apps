@@ -11,7 +11,7 @@
         android:id="@+id/btnSaludarApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Saludar App"
+        android:text="@string/Saludar_App"
         android:background="@color/teal_200"
         android:layout_marginBottom="20dp"
         />
@@ -19,7 +19,7 @@
         android:id="@+id/btnIMCApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IMC App"
+        android:text="@string/IMC_APP"
         android:background="@color/background_button"
         android:layout_marginBottom="20dp"
         />
@@ -28,7 +28,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/teal_200"
-        android:text="To Do App"
+        android:text="@string/ToDoApp"
+        android:layout_marginBottom="20dp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSuperHeroApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SuperHeroApp"
+        android:background="@color/background_button"
         android:layout_marginBottom="20dp"
         />
 

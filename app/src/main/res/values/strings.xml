@@ -33,5 +33,9 @@
     <string name="todo_Personal">Personal</string>
     <string name="todo_Others">Otros</string>
     <string name="todo_HomeWork">TAREA</string>
+    <string name="SuperHeroApp">Super Hero App</string>
+    <string name="ToDoApp">To Do App</string>
+    <string name="IMC_APP">IMC App</string>
+    <string name="Saludar_App">Saludar App</string>
 
 </resources>
