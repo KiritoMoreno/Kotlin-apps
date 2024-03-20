@@ -60,7 +60,7 @@ class ToDoActivity : AppCompatActivity() {
     private fun updateCategories(position: Int){
         categories[position].isSelected = !categories[position].isSelected
         categoriesAdapter.notifyItemChanged(position)
-
+        updateTasks()
     }
     private fun onItemSelected(position:Int){
         tasks[position].isSelected = !tasks[position].isSelected
@@ -98,6 +98,9 @@ class ToDoActivity : AppCompatActivity() {
         dialog.show()
     }
     private fun updateTasks(){
+        val selectedCategories : List<TaskCategory> = categories.filter { it.isSelected } // Aqui filtra por las categorias seleccionadas
+        val newTasks = tasks.filter { selectedCategories.contains(it.category) } // Aqui lo filtra
+        tasksAdapter.tasks = newTasks
         //Avisar al adaptor de que tenemos nuevos items
         tasksAdapter.notifyDataSetChanged()
     }
