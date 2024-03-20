@@ -48,13 +48,18 @@ class ToDoActivity : AppCompatActivity() {
 
     }
     private fun initUI(){
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories){position -> updateCategories(position)}
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
         rvCategories.adapter = categoriesAdapter
 
         tasksAdapter = TasksAdapter(tasks){position -> onItemSelected(position)}
         rvTasks.layoutManager = LinearLayoutManager(this)
         rvTasks.adapter = tasksAdapter
+
+    }
+    private fun updateCategories(position: Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
 
     }
     private fun onItemSelected(position:Int){
