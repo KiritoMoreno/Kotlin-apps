@@ -52,7 +52,7 @@ class ToDoActivity : AppCompatActivity() {
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
         rvCategories.adapter = categoriesAdapter
 
-        tasksAdapter = TasksAdapter(tasks)
+        tasksAdapter = TasksAdapter(tasks){position -> onItemSelected(position)}
         rvTasks.layoutManager = LinearLayoutManager(this)
         rvTasks.adapter = tasksAdapter
 
