@@ -57,6 +57,10 @@ class ToDoActivity : AppCompatActivity() {
         rvTasks.adapter = tasksAdapter
 
     }
+    private fun onItemSelected(position:Int){
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTasks()
+    }
     private fun initListeners(){
         fabAddTask.setOnClickListener {showDialog()
 
