@@ -2,6 +2,7 @@ package com.example.kotlinapps.superheroapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.widget.SearchView
 import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivitySuperHeroListBinding
@@ -41,6 +42,11 @@ class SuperHeroListActivity : AppCompatActivity() {
     private fun searchByName(query: String) {
         CoroutineScope(Dispatchers.IO).launch{
             val myResponse = retrofit.create(ApiService::class.java).getSuperheroes(query)
+            if (myResponse.isSuccessful){
+                Log.i("Moreno", "Funciona")
+            }else{
+                Log.i("Moreno", "No Funciona")
+            }
         }
     }
 
