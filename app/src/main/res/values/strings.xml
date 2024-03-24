@@ -33,9 +33,17 @@
     <string name="todo_Personal">Personal</string>
     <string name="todo_Others">Otros</string>
     <string name="todo_HomeWork">TAREA</string>
-    <string name="SuperHeroApp">Super Hero App</string>
     <string name="ToDoApp">To Do App</string>
     <string name="IMC_APP">IMC App</string>
     <string name="Saludar_App">Saludar App</string>
+
+    <!-- SuperHero App-->
+    <string name="SuperHeroApp">Super Hero App</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="stregth">Streght</string>
+    <string name="speed">Speed</string>
+    <string name="durability">Durability</string>
+    <string name="power">Power</string>
+    <string name="combat">Combat</string>
 
 </resources>
