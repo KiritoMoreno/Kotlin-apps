@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivitySuperHeroListBinding
+import com.example.kotlinapps.superheroapp.data.SuperHeroDataResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
@@ -40,12 +42,18 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
+        binding.progressBar.isVisible = true
         CoroutineScope(Dispatchers.IO).launch{
             val myResponse = retrofit.create(ApiService::class.java).getSuperheroes(query)
             if (myResponse.isSuccessful){
                 Log.i("Moreno", "Funciona")
+                val response : SuperHeroDataResponse? = myResponse.body()
+                if(response !=null){
+                    Log.i("Moreno", response.toString())
+                    runOnUiThread { binding.progressBar.isVisible = false } // Corre en el hilo principal
+                }
             }else{
-                Log.i("Moreno", "No Funciona")
+                Log.i("Moreno", "No Funciona =(")
             }
         }
     }
