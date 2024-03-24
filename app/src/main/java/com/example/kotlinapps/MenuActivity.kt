@@ -44,4 +44,6 @@ class MenuActivity : AppCompatActivity() {
         val intent = Intent(this, FirstAppActivity::class.java)
         startActivity(intent)
     }
+
+
 }
