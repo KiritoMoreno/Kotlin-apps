@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivityDetailSuperHeroBinding
 import com.example.kotlinapps.superheroapp.data.SuperHeroDetailResponse
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,7 +42,7 @@ class DetailSuperHeroActivity : AppCompatActivity() {
         }
     }
     private fun createUI(superhero: SuperHeroDetailResponse){
-
+        Picasso.get().load(superhero.image.url).into(binding.ivSuperHero)
     }
 
     private fun getRetrofit(): Retrofit {
