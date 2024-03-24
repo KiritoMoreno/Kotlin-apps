@@ -11,6 +11,6 @@ class SuperHeroViewHolder (view: View): RecyclerView.ViewHolder(view){
         binding.tvSuperheroName.text = superheroItemResponse.name
 
         Picasso.get().load(superheroItemResponse.superheroImage.url).into(binding.ivSuperHero)
-        
+
     }
 }
