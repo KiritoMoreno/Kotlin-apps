@@ -5,6 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.widget.SearchView
 import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivitySuperHeroListBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -35,7 +39,9 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
-
+        CoroutineScope(Dispatchers.IO).launch{
+            val myResponse = retrofit.create(ApiService::class.java).getSuperheroes(query)
+        }
     }
 
     // Nos va devolver una instancia de Retrofit
