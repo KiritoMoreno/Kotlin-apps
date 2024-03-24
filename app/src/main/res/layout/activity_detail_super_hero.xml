@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="4dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
@@ -130,6 +130,8 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:text="@string/intelligence"
+                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textSize="10sp" />
 
                 <TextView
@@ -138,6 +140,8 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:text="@string/stregth"
+                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textSize="10sp" />
 
                 <TextView
@@ -146,6 +150,8 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:text="@string/speed"
+                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textSize="10sp" />
 
                 <TextView
@@ -154,6 +160,8 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:text="@string/durability"
+                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textSize="10sp" />
 
                 <TextView
@@ -162,6 +170,8 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:text="@string/power"
+                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textSize="10sp" />
 
                 <TextView
@@ -170,6 +180,8 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:text="@string/combat"
+                    android:singleLine="true"
+                    android:maxLines="1"
                     android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>

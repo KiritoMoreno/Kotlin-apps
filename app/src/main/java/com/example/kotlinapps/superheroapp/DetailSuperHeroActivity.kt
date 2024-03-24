@@ -2,6 +2,8 @@ package com.example.kotlinapps.superheroapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.View
 import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivityDetailSuperHeroBinding
 import com.example.kotlinapps.superheroapp.data.PowerStatsResponse
@@ -12,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 class DetailSuperHeroActivity : AppCompatActivity() {
 
@@ -48,7 +51,26 @@ class DetailSuperHeroActivity : AppCompatActivity() {
         prepareStats(superhero.powerstats)
     }
     private fun prepareStats(powerstats: PowerStatsResponse){
-        
+        //Llamamos el metodo updateHeight para cada atributo
+        updateHeight(binding.viewIntelligence, powerstats.intelligence)
+        updateHeight(binding.viewStrength, powerstats.strength)
+        updateHeight(binding.viewSpeed, powerstats.speed)
+        updateHeight(binding.viewDurability,powerstats.durability)
+        updateHeight(binding.viewCombat, powerstats.combat)
+        updateHeight(binding.viewPower,powerstats.power)
+
+    }
+    private fun updateHeight(view: View, stat:String){
+        // Este metodo va recibir una view y va actuar sobre esa view  y luego necesitara un entero stat que le llega por parametro
+        // Asi no repitimos codigo
+        val params = view.layoutParams
+        params.height = pxToDp(stat.toFloat())
+        view.layoutParams = params
+    }
+    private fun pxToDp(px:Float):Int{
+        // Convertimos pixel to DP
+        // resources.displayMetrics -> Va ajustarse sobre el tamaño de la pantalla
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px , resources.displayMetrics).roundToInt()
     }
 
     private fun getRetrofit(): Retrofit {
