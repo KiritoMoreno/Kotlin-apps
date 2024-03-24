@@ -1,5 +1,6 @@
 package com.example.kotlinapps.superheroapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivitySuperHeroListBinding
+import com.example.kotlinapps.superheroapp.DetailSuperHeroActivity.Companion.EXTRA_ID
 import com.example.kotlinapps.superheroapp.data.SuperHeroAdapter
 import com.example.kotlinapps.superheroapp.data.SuperHeroDataResponse
 import kotlinx.coroutines.CoroutineScope
@@ -75,4 +77,10 @@ class SuperHeroListActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create()) // Para Transformar
             .build()
     }
+    private fun navigateToDetail(id:String){
+        val intent = Intent(this, DetailSuperHeroActivity::class.java)
+        intent.putExtra(EXTRA_ID,id)
+        startActivity(intent)
+    }
+
 }
