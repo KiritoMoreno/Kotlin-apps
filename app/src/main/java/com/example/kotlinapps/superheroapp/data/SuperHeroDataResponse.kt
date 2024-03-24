@@ -1,4 +1,6 @@
 package com.example.kotlinapps.superheroapp.data
 
-data class SuperHeroDataResponse (val response: String){
+import com.google.gson.annotations.SerializedName
+
+data class SuperHeroDataResponse (@SerializedName("response") val ResponseHere: String){
 }
