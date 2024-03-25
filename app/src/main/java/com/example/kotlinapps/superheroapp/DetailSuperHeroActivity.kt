@@ -49,6 +49,10 @@ class DetailSuperHeroActivity : AppCompatActivity() {
         Picasso.get().load(superhero.image.url).into(binding.ivSuperHero)
         binding.tvSuperheroName.text = superhero.name
         prepareStats(superhero.powerstats)
+        binding.tvSuperheroRealName.text = superhero.biography.fullName
+        binding.tvSuperheroRace.text = superhero.appearance.race
+        binding.tvPublisher.text = superhero.biography.publisher
+        binding.tvSuperheroGender.text = superhero.appearance.gender
     }
     private fun prepareStats(powerstats: PowerStatsResponse){
         //Llamamos el metodo updateHeight para cada atributo
