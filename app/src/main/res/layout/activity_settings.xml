@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/DarkMode"
-                android:textColor="@color/black"
+                android:textColor="@color/settings_text_title"
 
                 />
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Bluetooth_mode"
-                android:textColor="@color/black"
+                android:textColor="@color/settings_text_title"
 
                 />
             <TextView
@@ -113,8 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Volumen_Adjuste"
-                android:textColor="@color/black"
-
+                android:textColor="@color/settings_text_title"
                 />
             <com.google.android.material.slider.RangeSlider
                 android:id="@+id/rsVolume"
@@ -145,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Vibrate_mode"
-            android:textColor="@color/black"
+            android:textColor="@color/settings_text_title"
             android:layout_weight="1"
             />
         <com.google.android.material.switchmaterial.SwitchMaterial
