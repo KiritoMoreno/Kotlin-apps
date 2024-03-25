@@ -80,6 +80,15 @@ class SettingsActivity : AppCompatActivity() {
 
     // Una función que me regrese todos los valores
     private fun getSettings(): Flow<SettingsModel?> {
+        return dataStore.data.map { preferences ->
+            SettingsModel(
+                volume = preferences[intPreferencesKey(VOLUME_LVL)] ?: 50,
+                bluetooth = preferences[booleanPreferencesKey(KEY_BLUETOOTH)] ?: true,
+                darkMode = preferences[booleanPreferencesKey(KEY_DARK_MODE)] ?: false,
+                vibration = preferences[booleanPreferencesKey(KEY_VIBRATION)] ?: true
+
+            )
+        }
 
     }
 }
