@@ -5,7 +5,9 @@ import com.google.gson.annotations.SerializedName
 data class SuperHeroDetailResponse(
     @SerializedName("name") val name: String,
     @SerializedName("powerstats") val powerstats: PowerStatsResponse,
-    @SerializedName("image") val image : SuperHeroImageDetailResponse
+    @SerializedName("image") val image : SuperHeroImageDetailResponse,
+    @SerializedName("biography") val biography: Biography,
+    @SerializedName("appearance") val appearance : Appearance
 )
 
 data class PowerStatsResponse(
@@ -17,3 +19,12 @@ data class PowerStatsResponse(
     @SerializedName("combat") val combat: String
 )
 data class SuperHeroImageDetailResponse(@SerializedName("url") val url:String)
+
+data class Biography(
+    @SerializedName("full-name") val fullName:String,
+    @SerializedName("publisher") val publisher: String
+    )
+data class Appearance(
+    @SerializedName("gender") val gender:String,
+    @SerializedName("race") val race: String
+)
