@@ -48,5 +48,7 @@
     <string name="Settings">Settings</string>
     <string name="DarkMode">Modo oscuro</string>
     <string name="Description_dark_mode">Activa el modo oscuro para un cambio visual</string>
+    <string name="Bluetooth_mode">Activar Bluetooth</string>
+    <string name="Description_bluetooth">Conecta periféricos sin cables</string>
 
 </resources>
