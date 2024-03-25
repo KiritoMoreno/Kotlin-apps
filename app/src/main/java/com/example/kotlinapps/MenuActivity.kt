@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import com.example.kotlinapps.firstapp.FirstAppActivity
 import com.example.kotlinapps.imccalculator.ImcCalculatorActivity
+import com.example.kotlinapps.settings.SettingsActivity
 import com.example.kotlinapps.superheroapp.SuperHeroListActivity
 import com.example.kotlinapps.todoapp.ToDoActivity
 
@@ -18,11 +19,18 @@ class MenuActivity : AppCompatActivity() {
         val btnIMCApp = findViewById<AppCompatButton>(R.id.btnIMCApp)
         val btnToDoApp = findViewById<AppCompatButton>(R.id.btnToDoApp)
         val btnSuperHero = findViewById<AppCompatButton>(R.id.btnSuperHeroApp)
+        val btnSettings = findViewById<AppCompatButton>(R.id.btnSettings)
 
         btnSaludarApp.setOnClickListener { navigateToSaludarApp() }
         btnIMCApp.setOnClickListener { navigateToImcApp() }
         btnToDoApp.setOnClickListener { navigateToToDoApp() }
         btnSuperHero.setOnClickListener { navigateToSuperHeroApp() }
+        btnSettings.setOnClickListener { navigateToSettings() }
+    }
+
+    private fun navigateToSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToSuperHeroApp() {

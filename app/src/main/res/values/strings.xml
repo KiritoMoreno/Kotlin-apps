@@ -45,5 +45,6 @@
     <string name="durability">Durability</string>
     <string name="power">Power</string>
     <string name="combat">Combat</string>
+    <string name="Settings">Settings</string>
 
 </resources>
