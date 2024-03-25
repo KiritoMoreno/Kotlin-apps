@@ -46,5 +46,7 @@
     <string name="power">Power</string>
     <string name="combat">Combat</string>
     <string name="Settings">Settings</string>
+    <string name="DarkMode">Modo oscuro</string>
+    <string name="Description_dark_mode">Activa el modo oscuro para un cambio visual</string>
 
 </resources>
