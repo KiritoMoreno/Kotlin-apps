@@ -14,6 +14,8 @@ import com.example.kotlinapps.R
 import com.example.kotlinapps.databinding.ActivitySettingsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 //Creamos una función de extension
@@ -70,8 +72,14 @@ class SettingsActivity : AppCompatActivity() {
 
     private suspend fun saveOptions(key: String, value: Boolean) {
         // booleano para las opciones de On y Off de los adjustes
+        // Usamos un Flow para que comunique ( continua y bidireccional)
         dataStore.edit { preferences ->
             preferences[booleanPreferencesKey(key)] = value
         }
+    }
+
+    // Una función que me regrese todos los valores
+    private fun getSettings(): Flow<SettingsModel?> {
+
     }
 }
