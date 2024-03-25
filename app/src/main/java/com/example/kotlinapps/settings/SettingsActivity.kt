@@ -15,6 +15,7 @@ import com.example.kotlinapps.databinding.ActivitySettingsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -28,13 +29,13 @@ class SettingsActivity : AppCompatActivity() {
         const val KEY_DARK_MODE = "key_dark_mode"
         const val KEY_VIBRATION = "key_vibration"
     }
-
+    private var firstTime : Boolean = true
     private lateinit var binding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        CoroutineScope(Dispatchers.IO).launch { getSettings().collect{ // Ejecuta en un hilo segundario
+        CoroutineScope(Dispatchers.IO).launch { getSettings().filter { firstTime }.collect{ // Ejecuta en un hilo segundario
             //datos SettingsModel()
             settingsModel ->
             if(settingsModel != null){
@@ -43,6 +44,7 @@ class SettingsActivity : AppCompatActivity() {
                     binding.switchBluetooth.isChecked = settingsModel.bluetooth
                     binding.switchDarkMode.isChecked = settingsModel.darkMode
                     binding.rsVolume.setValues(settingsModel.volume.toFloat())
+                    firstTime = !firstTime
                 }
 
             }
