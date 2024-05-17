@@ -7,10 +7,10 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiService {
-    @GET("/api/AQUI FALTA EL TOKEN/search/{name}")
+    @GET("/api/16e28eb2e1885da59486491f5a24132e/search/{name}")
     suspend fun getSuperheroes(@Path("name") superheroName: String): Response<SuperHeroDataResponse>
 
-    @GET("/api/Aqui falta el token/{id}")
+    @GET("/api/16e28eb2e1885da59486491f5a24132e/{id}")
     suspend fun getSuperheroDetails(@Path("id") superheroId : String): Response<SuperHeroDetailResponse>
 
 }
