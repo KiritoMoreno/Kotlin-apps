@@ -1,63 +1,63 @@
-# Proyecto de Aplicaciones en Kotlin
+# Kotlin Applications Project
 
-En este proyecto vamos a desarrollar cinco aplicaciones diferentes utilizando Android Studio y el lenguaje de programación Kotlin. Aunque sabemos que, para seguir las mejores prácticas, los proyectos deberían estar individualmente, en esta ocasión se agruparán en un solo proyecto. A continuación, se detallan los cinco proyectos que se llevarán a cabo:
+In this project, we will develop five different applications using Android Studio and the Kotlin programming language. Although we know that following best practices, the projects should be separate, in this case, they will be grouped into a single project. Below are the five projects that will be carried out:
 
 ## First APP
-- Navegación de pantallas
-- Crear un menú para navegar entre apps
+- Screen navigation
+- Create a menu to navigate between apps
 
-## Diseñar y programar app IMC Calculator
-- Cambios entre pantallas
-- Gestión y creación de colores
-- Diseño de UI
+## Design and program IMC Calculator app
+- Screen transitions
+- Color management and creation
+- UI design
 - CardView
 - RangeSlider
-- Compatibilidad con múltiples idiomas (Strings)
-- Listeners y clicks
+- Multi-language support (Strings)
+- Listeners and clicks
 
-## Diseñar y programar app TODO
+## Design and program TODO app
 - RecyclerView
 - Dialog
 - Sealed class
-- Funciones lambdas
+- Lambda functions
 
-## Diseñar y programar una buscador de Superhéroes
+## Design and program a Superhero search app
 - SearchView
-- Consumo de APIs con Retrofit
-- Funciones lambdas
+- API consumption with Retrofit
+- Lambda functions
 - RecyclerView
 
-## Diseñar y programar una pantalla de ajustes con persistencia de datos
-- Persistencia de datos con DataStore
-- Switch y RangeSlider
-- Modo noche
+## Design and program a settings screen with data persistence
+- Data persistence with DataStore
+- Switch and RangeSlider
+- Night mode
 
 ---
 
-## Aplicaciones desarrolladas durante el curso
+## Applications developed during the course
 
-### Calculador IMC
+### IMC Calculator
 
-|                               Pantalla principal                               |                                   Resultado                                    |
-|:------------------------------------------------------------------------------:|:------------------------------------------------------------------------------:|
+|                               Main Screen                               |                                 Result                                  |
+|:-----------------------------------------------------------------------:|:----------------------------------------------------------------------:|
 |  <img src="https://i.imgur.com/F6rSzsI.png" style="height: 50%; width:50%;"/>  |  <img src="https://i.imgur.com/lH1NBas.png" style="height: 50%; width:50%;"/>  |
 
-### Organizador de tareas
+### Todo App
 
-|                              Pantalla principal                              |                               Añadiendo tareas                               |
-|:----------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
+|                              Main Screen                              |                               Adding Tasks                              |
+|:---------------------------------------------------------------------:|:----------------------------------------------------------------------:|
 | <img src="https://i.imgur.com/uvVh4Q9.png" style="height: 50%; width:50%;"/> | <img src="https://i.imgur.com/GhHuj6c.png" style="height: 50%; width:50%;"/> |
 
-### Buscador de superhéroes
+### Superhero Search
 
-|                              Pantalla principal                              |                               Añadiendo tareas                               |
-|:----------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
+|                              Main Screen                              |                               Adding Tasks                              |
+|:---------------------------------------------------------------------:|:----------------------------------------------------------------------:|
 | <img src="https://i.imgur.com/XNwTHjy.png" style="height: 50%; width:50%;"/> | <img src="https://i.imgur.com/xYOssJf.png" style="height: 50%; width:50%;"/> |
 
-### Pantalla de ajustes
+### Settings Screen
 
-|                              Pantalla principal                              |                               Añadiendo tareas                               |
-|:----------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
+|                              Light Screen                              |                               Dark Screen                              |
+|:---------------------------------------------------------------------:|:----------------------------------------------------------------------:|
 | <img src="https://i.imgur.com/HnYQIew.png" style="height: 50%; width:50%;"/> | <img src="https://i.imgur.com/p1Yn1gt.png" style="height: 50%; width:50%;"/> |
 
 ---
